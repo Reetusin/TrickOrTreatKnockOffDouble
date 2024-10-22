@@ -9,7 +9,7 @@ public class Move : MonoBehaviour
     private void Start()
     {
         var pos = transform.position;
-        pos.x += Random.Range(-15f, 15f);
+        pos.x += Random.Range(-10f, 10f);
         transform.position = pos;
     }
 
@@ -17,7 +17,7 @@ public class Move : MonoBehaviour
     {
         transform.position += Vector3.down * speed * Time.deltaTime;
 
-        if (transform.position.x < -10)
+        if (transform.position.y < -7)
         {
             Destroy(gameObject);
         }

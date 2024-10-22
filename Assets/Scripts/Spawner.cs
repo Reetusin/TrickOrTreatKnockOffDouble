@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject towers;
     public GameObject fromwers;
     public GameObject atowers;
-    public float spawnRate = 2f; 
+    public float spawnRate = 1f; 
     private float lastSpawnTime; 
 
     // Define the boundaries for the X positionawn
