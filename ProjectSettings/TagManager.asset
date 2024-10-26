@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Candy
   - Bomb
+  - Pipe
   layers:
   - Default
   - TransparentFX

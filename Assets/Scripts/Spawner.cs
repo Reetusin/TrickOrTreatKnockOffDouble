@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject towers;
-    public GameObject fromwers;
-    public GameObject atowers;
-    public float spawnRate = 1f; 
-    private float lastSpawnTime; 
+    public GameObject[] towersArray; 
+    public float spawnRate = 1f;     
+    private float lastSpawnTime;
 
-    // Define the boundaries for the X positionawn
-    public float minX = 15f; // Minimum X value for spawning
-    public float maxX = 20f;  // Maximum X value for spawning
+    public float minX = 15f; 
+    public float maxX = 20f; 
 
     void Start()
     {
-        // Initial spawn (optional)
         SpawnTower();
     }
 
@@ -31,13 +27,10 @@ public class Spawner : MonoBehaviour
 
     void SpawnTower()
     {
-        // Generate a random X position within specified bounds
-        float randomX = Random.Range(minX, maxX);
+        float randomX = UnityEngine.Random.Range(minX, maxX);
         Vector3 spawnPosition = new Vector3(randomX, 8f, transform.position.z);
-
-        // Instantiate the tower at the random position
-        Instantiate(towers, spawnPosition, Quaternion.identity);
-        Instantiate(atowers, spawnPosition, Quaternion.identity);
-        Instantiate(fromwers, spawnPosition, Quaternion.identity);
+        int randomIndex = UnityEngine.Random.Range(0, towersArray.Length);
+        GameObject selectedTower = towersArray[randomIndex];
+        Instantiate(selectedTower, spawnPosition, Quaternion.identity);
     }
 }
