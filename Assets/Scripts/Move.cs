@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class Move : MonoBehaviour
     private void Start()
     {
         var pos = transform.position;
-        pos.x += Random.Range(-10f, 10f);
+        pos.x += UnityEngine.Random.Range(-10f, 10f);
         transform.position = pos;
     }
 
@@ -21,5 +22,10 @@ public class Move : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void ChangeSpeed(float newSpeed)
+    {
+        speed = newSpeed;
     }
 }
